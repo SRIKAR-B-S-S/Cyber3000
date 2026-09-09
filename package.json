@@ -1,0 +1,25 @@
+{
+  "name": "cyber3000",
+  "version": "1.0.0",
+  "description": "A Slackbot that brings Y2K cyber-nostalgia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SRIKAR-B-S-S/Cyber3000.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SRIKAR-B-S-S/Cyber3000/issues"
+  },
+  "homepage": "https://github.com/SRIKAR-B-S-S/Cyber3000#readme",
+  "dependencies": {
+    "@slack/bolt": "^5.1.0",
+    "axios": "^1.20.0",
+    "dotenv": "^17.4.2"
+  }
+}
