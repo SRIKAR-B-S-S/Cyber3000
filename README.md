@@ -9,6 +9,8 @@ Whether you're reminiscing about early-2000s gadgetry or looking for a quick spo
 ## Commands
 | Command                 | Description                                                            | Usage Example			
 | ------------            | -----------------------------------------------------------            | ---------------------------------
+| `/cyber3000-y2ktech`    | Info. about iconic tech devices from the 2000s era.                    | `/cyber3000-y2ktech`
+| `/cyber3000-nostalgia`  | Drops a nostalgic memory or lifestyle throwback from the 1990s-2010s.  | `/cyber3000-nostalgia`
 | `/cyber3000-seek`       | Gives a summary about the keyword entered                              | `/cyber3000-seek <keyword>`
 | `/cyber3000-advice`     | Drops a random piece of advice to get you through the workday.         | `/cyber3000-advice`
 | `/cyber3000-ping`       | Basic command to check the latency of the bot                          | `/cyber3000-ping`
@@ -16,6 +18,7 @@ Whether you're reminiscing about early-2000s gadgetry or looking for a quick spo
 
 ## Built With:
 **Slackbot**: Coded in JavaScript (Node.js) using Slack's Bolt Framework
+**My APIs**: JSON (for data)
 
 #
 ##### APIs used: https://api.adviceslip.com/ and https://api.duckduckgo.com/ <br> Banner: Made and edited on [Canva](canva.com)

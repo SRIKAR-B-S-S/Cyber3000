@@ -78,7 +78,45 @@ const seekResult = await getKeywordInfo(keyword);
     });
 });
 
+/* Added the -nostalgia command which fetches a random nostalgic memory from the 1990s-2010s era */
 
+app.command('/cyber3000-nostalgia', async ({ ack, respond }) => {
+  await ack();
+try {
+    const res = await axios.get('https://raw.githubusercontent.com/SRIKAR-B-S-S/Cyber3000/main/API/nostalgia.json');
+    const items = res.data;
+    const randomItem = items[Math.floor(Math.random() * items.length)];
+
+    await respond({
+      text: `*Nostalgia Vault*: \n> "${randomItem.fact}"\n\n_*Era:* ${randomItem.era}_`
+    });
+  } catch (err) {
+    await respond({ text: "Failed fetch data from the Nostalgia Vault ;(" });
+        console.error("Error fetching data: ", err.message);
+  }
+});
+
+/* Added the -y2ktech command below which drops info about some cool tech from the 2000s Era! */
+
+app.command('/cyber3000-y2ktech', async ({ ack, respond }) => {
+  await ack();
+try {
+    const res = await axios.get('https://raw.githubusercontent.com/SRIKAR-B-S-S/Cyber3000/main/API/y2ktech.json');
+    const techList = res.data;
+    const device = techList[Math.floor(Math.random() * techList.length)];
+
+    await respond({
+      text: `*${device.name}* [${device.year}]\n> \`\`\`${device.details} \`\`\`\n\n`
+    });
+  } catch (err) {
+    await respond({ text: "Failed fetch data from the Tech Archive ;(" });
+        console.error("Error fetching data: ", err.message);
+  }
+});
+
+/* I have used 'require(relative-path-of-my-local-json-file)' in place of 'await axios.get(url-for-json-file-online)' when defining res variable as I was running my bot locally and axios can't be used to parse local JSON files */
+/* require() is an inbuilt NodeJS function used import files so I have used it in place of axios, thanks to google for suggesting me this :) */
+/* Also note that you have to remove the '.data' after 'res' when defining the techList or items variable as it will cause issues for the parsing the local JSON files */
 
 (async () => {
   await app.start();
