@@ -31,6 +31,55 @@ await ack();
  }
 });
 
+/* Added the function for -seek command here! - Uses DuckDuckGo JSON API(api.duckduckgo.com) to give a summary of the keyword entered.*/
+
+async function getKeywordInfo(query) {
+    try {
+        const ddgURL = `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&no_html=1`;
+        const ddgRES = await axios.get(ddgURL);
+
+const abstract = ddgRES.data.Abstract;
+
+    if (abstract && abstract.length > 0) {
+      return {
+        text: abstract
+      };
+    } else {
+      return { 
+        text: `Failed to fetch the results :( \n Try shortening your keyword or searching for a specific topic.`
+      };
+    }
+  } catch(error) {
+    console.error("Error fetching data: ", error.message);
+    return { 
+      text: `Error: Failed to fetch the results :(`
+    };
+  }
+}
+
+/* Added the -seek command here which uses the above function to display the summary about the keyword!*/
+
+app.command('/cyber3000-seek', async ({ command, ack, respond}) => {
+    await ack();
+
+    const keyword = command.text.trim();
+
+    if (!keyword) {
+        await respond({
+            text: "Please provide a keyword! \n Usage `/cyber3000-seek <keyword>` (eg. /cyber3000-seek iPod Classic ) "
+        });
+        return;
+    }
+
+const seekResult = await getKeywordInfo(keyword);
+
+    await respond({
+        text: `\`\`\` ${keyword.toUpperCase()} \`\`\`\n${seekResult.text}`
+    });
+});
+
+
+
 (async () => {
   await app.start();
   console.log("bot is running!");
