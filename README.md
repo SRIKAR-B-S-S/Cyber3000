@@ -1,4 +1,4 @@
-# Cyber3000 [ In progress 🚧]
+# Cyber3000
 ![Cyber3000 Banner](./assets/banner.png) <br><br>
 A Slackbot that brings Y2K cyber-nostalgia, specifically for nerds, tech archaeologists, and 2000s era enthusiasts. 
 #
@@ -11,14 +11,16 @@ Whether you're reminiscing about early-2000s gadgetry or looking for a quick spo
 | ------------            | -----------------------------------------------------------            | ---------------------------------
 | `/cyber3000-y2ktech`    | Info. about iconic tech devices from the 2000s era.                    | `/cyber3000-y2ktech`
 | `/cyber3000-nostalgia`  | Drops a nostalgic memory or lifestyle throwback from the 1990s-2010s.  | `/cyber3000-nostalgia`
+| `/cyber3000-ascii`      | Converts the given text into ASCII Art and displays it.                | `/cyber3000-ascii <keyword>`
 | `/cyber3000-seek`       | Gives a summary about the keyword entered                              | `/cyber3000-seek <keyword>`
 | `/cyber3000-advice`     | Drops a random piece of advice to get you through the workday.         | `/cyber3000-advice`
+| `/cyber3000-help`       | Displays all the commands of the bot                                   | `/cyber3000-help`
 | `/cyber3000-ping`       | Basic command to check the latency of the bot                          | `/cyber3000-ping`
 
 
 ## Built With:
-**Slackbot**: Coded in JavaScript (Node.js) using Slack's Bolt Framework
+**Slackbot**: Coded in JavaScript (Node.js) using Slack's Bolt Framework <br>
 **My APIs**: JSON (for data)
 
 #
-##### APIs used: https://api.adviceslip.com/ and https://api.duckduckgo.com/ <br> Banner: Made and edited on [Canva](canva.com)
+##### APIs used: https://api.adviceslip.com/ and https://api.duckduckgo.com/ and https://asciified.thelicato.io/ <br> Banner: Made and edited on [Canva](canva.com)

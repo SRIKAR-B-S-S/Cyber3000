@@ -118,6 +118,51 @@ try {
 /* require() is an inbuilt NodeJS function used import files so I have used it in place of axios, thanks to google for suggesting me this :) */
 /* Also note that you have to remove the '.data' after 'res' when defining the techList or items variable as it will cause issues for the parsing the local JSON files */
 
+/* Added the -ascii command below!! It converts the given text into ASCII Art which was really popular in the 80s and 90s*/
+
+app.command('/cyber3000-ascii', async ({ command, ack, respond}) => {
+await ack();
+
+const text = command.text.trim();
+
+  if (!text) {
+      await respond({
+        text: "Please provide some text to be converted info ASCII Art. Usage: /cyber3000-ascii <keyword>"
+      });
+      return;
+  }
+
+const ASCIIart = await axios.get(`https://asciified.thelicato.io/api/v2/ascii?text=${encodeURIComponent(text)}`);
+
+      await respond({
+        text: `\`\`\`\n${ASCIIart.data}\n\`\`\``
+      });
+});
+
+
+/* Added the help command here! It displays an image from my Github Repo which has a list on all my bot's commands */
+
+app.command('/cyber3000-help', async ({ ack, respond}) => {
+await ack();
+
+   await respond({
+    text: "Cyber3000 Bot Help Documentation",
+    blocks: [
+      {
+          type: "image",
+          title: {
+            type: "plain_text",
+            text: "Help Guide",
+          },
+          image_url: "https://raw.githubusercontent.com/SRIKAR-B-S-S/Cyber3000/main/assets/help.png",
+          alt_text:"Cyber3000 Bot Help Guide"
+      }
+    ]
+    });
+
+});
+
+
 (async () => {
   await app.start();
   console.log("bot is running!");
