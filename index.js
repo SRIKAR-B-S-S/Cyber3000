@@ -13,7 +13,10 @@ app.command("/cyber3000-ping", async ({ command, ack, respond }) => {
   const start = Date.now();
   await ack();
   const latency = Date.now() - start;
-  await respond({ text: `Pong!\nLatency: ${latency}ms` });
+  await respond({ 
+    response_type: "in_channel",
+    text: `Pong!\nLatency: ${latency}ms` 
+  });
 });
 
 /* Added the -advice command below! */
@@ -24,7 +27,8 @@ await ack();
     console.log("sent an advice! :)");
    const response = await axios.get("https://api.adviceslip.com/advice");
         await respond({
-            text:`${response.data.slip.advice}`});
+          response_type: "in_channel",
+          text:`${response.data.slip.advice}`});
     }
  catch(err) {
     await respond({ text: "Failed to fetch an advice.."});
@@ -74,7 +78,8 @@ app.command('/cyber3000-seek', async ({ command, ack, respond}) => {
 const seekResult = await getKeywordInfo(keyword);
 
     await respond({
-        text: `\`\`\` ${keyword.toUpperCase()} \`\`\`\n${seekResult.text}`
+      response_type: "in_channel",
+      text: `\`\`\` ${keyword.toUpperCase()} \`\`\`\n${seekResult.text}`
     });
 });
 
@@ -88,6 +93,7 @@ try {
     const randomItem = items[Math.floor(Math.random() * items.length)];
 
     await respond({
+      response_type: "in_channel",
       text: `*Nostalgia Vault*: \n> "${randomItem.fact}"\n\n_*Era:* ${randomItem.era}_`
     });
   } catch (err) {
@@ -106,6 +112,7 @@ try {
     const device = techList[Math.floor(Math.random() * techList.length)];
 
     await respond({
+      response_type: "in_channel",
       text: `*${device.name}* [${device.year}]\n> \`\`\`${device.details} \`\`\`\n\n`
     });
   } catch (err) {
@@ -135,6 +142,7 @@ const text = command.text.trim();
 const ASCIIart = await axios.get(`https://asciified.thelicato.io/api/v2/ascii?text=${encodeURIComponent(text)}`);
 
       await respond({
+        response_type: "in_channel",
         text: `\`\`\`\n${ASCIIart.data}\n\`\`\``
       });
 });
@@ -146,6 +154,7 @@ app.command('/cyber3000-help', async ({ ack, respond}) => {
 await ack();
 
    await respond({
+    response_type: "in_channel",
     text: "Cyber3000 Bot Help Documentation",
     blocks: [
       {
