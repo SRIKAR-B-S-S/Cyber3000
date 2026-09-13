@@ -22,11 +22,39 @@ Whether you're reminiscing about early-2000s gadgetry or looking for a quick spo
 **Slackbot**: Coded in JavaScript (Node.js) using Slack's Bolt Framework <br>
 **My APIs**: JSON (for data)
 
-## Try Cyber3000
-You can see the responses for all of Cyber3000's commands [HERE!!](https://app.slack.com/client/E09V59WQY1E/C0C1H76G3UL)
+## Demo
+Click on the command below to view it's response! [Working of Bot]
+<details>
+  <summary>🔘/cyber3000-y2ktech</summary>
+  
+  <img width="1639" height="342" alt="image" src="https://github.com/user-attachments/assets/024220b6-c46e-48fa-8ae6-2b619bb5b362" />
+</details>
 
-### How you can test it?
-If you are already in HackClub Workspace, you can go to the [#bot-spam](https://app.slack.com/client/E09V59WQY1E/C0P5NE354) and test the bot commands.
+<details>
+  <summary>🔘/cyber3000-nostalgia</summary>
+<img width="1228" height="427" alt="image" src="https://github.com/user-attachments/assets/410d9d16-3dcf-4972-a7ab-de3b98dd3068" />
+</details>
+
+<details>
+  <summary>🔘/cyber3000-seek</summary>
+<img width="1630" height="559" alt="image" src="https://github.com/user-attachments/assets/db48b3b5-6fd4-4187-95ff-7f5887b4151a" />
+</details>
+
+<details>
+  <summary>🔘/cyber3000-asciii</summary>
+<img width="1573" height="566" alt="image" src="https://github.com/user-attachments/assets/04b57622-9975-4f5c-9903-e168540979ce" />
+</details>
+
+<details>
+  <summary>🔘/cyber3000-advice</summary>
+<img width="474" height="167" alt="image" src="https://github.com/user-attachments/assets/5ee5fc09-ec24-4f7f-b684-619db04d1808" />
+
+</details>
 
 #
-##### APIs used: https://api.adviceslip.com/ and https://api.duckduckgo.com/ and https://asciified.thelicato.io/ <br> Banner: Made and edited on [Canva](canva.com)
+
+## Try Cyber3000
+If you are already in HackClub Workspace, you can go to [#try-cyber3000](https://hackclub.enterprise.slack.com/archives/C0C1MBX3RA8) and test the bot commands.
+
+#
+##### APIs used: https://api.adviceslip.com/, https://api.duckduckgo.com/ and https://asciified.thelicato.io/ <br> Banner: Made and edited on [Canva](canva.com)
