@@ -57,4 +57,4 @@ Click on the command below to view it's response! [Working of Bot]
 If you are already in HackClub Workspace, you can go to [#try-cyber3000](https://hackclub.enterprise.slack.com/archives/C0C1MBX3RA8) and test the bot commands.
 
 #
-##### APIs used: https://api.adviceslip.com/, https://api.duckduckgo.com/ and https://asciified.thelicato.io/ <br> Banner: Made and edited on [Canva](canva.com)
+##### APIs used: https://api.adviceslip.com/, https://en.wikipedia.org/api/ and https://asciified.thelicato.io/ <br> Banner: Made and edited on [Canva](canva.com)

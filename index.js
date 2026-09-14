@@ -35,14 +35,34 @@ await ack();
  }
 });
 
-/* Added the function for -seek command here! - Uses DuckDuckGo JSON API(api.duckduckgo.com) to give a summary of the keyword entered.*/
+/* Added the function for -seek command here! - Currently uses Wikipedia REST API to give a summary of the keyword entered. Previously, I've used the DuckDuckGo API which failed to fetch results sometimes and had limited range of search keywords. */
 
 async function getKeywordInfo(query) {
     try {
-        const ddgURL = `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&no_html=1`;
-        const ddgRES = await axios.get(ddgURL);
 
-const abstract = ddgRES.data.Abstract;
+      const keyphraseURL = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${encodeURIComponent(query)}&limit=1&format=json`;
+      const keyphraseResult = await axios.get(keyphraseURL, {
+      headers: {
+        // Wikipedia needs a custom User-Agent format: AppName/Version or else it'll throw a 403 Forbidden error!
+        'User-Agent': 'Cyber3000Bot/1.0 (https://github.com/SRIKAR-B-S-S/Cyber3000)'
+      }
+        });
+      const urls = keyphraseResult.data[3];
+            if (!urls || urls.length === 0) {
+      return { 
+        text: `Failed to fetch the results :(\nTry shortening your keyword or searching for a specific topic.`
+      };
+    }
+      const keyphrase = urls[0].split('/wiki/')[1];
+
+        const wikiURL = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(keyphrase)}`;
+        const wikiRES = await axios.get(wikiURL, {
+      headers: {
+        'User-Agent': 'Cyber3000Bot/1.0 (https://github.com/SRIKAR-B-S-S/Cyber3000)'
+      }
+        });
+
+const abstract = wikiRES.data.extract;
 
     if (abstract && abstract.length > 0) {
       return {
@@ -50,7 +70,7 @@ const abstract = ddgRES.data.Abstract;
       };
     } else {
       return { 
-        text: `Failed to fetch the results :( \n Try shortening your keyword or searching for a specific topic.`
+        text: `Failed to fetch the results :( \nTry shortening your keyword or searching for a specific topic.`
       };
     }
   } catch(error) {
