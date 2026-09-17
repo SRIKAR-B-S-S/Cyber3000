@@ -4,7 +4,6 @@ A Slackbot that brings Y2K cyber-nostalgia, specifically for nerds, tech archaeo
 #
 **Cyber3000** is a retro-inspired workspace bot built for people who love hardware nostalgia, quirky wisdom, and retro computing culture. It delivers throwback facts, tech history, and lifestyle memories straight into your Slack channels.
 
-Whether you're reminiscing about early-2000s gadgetry or looking for a quick spot of wisdom, Cyber3000 is the ultimate sidekick for your workspace.
 #
 ## Commands
 | Command                 | Description                                                            | Usage Example			
